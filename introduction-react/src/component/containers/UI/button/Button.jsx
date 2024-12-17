@@ -1,5 +1,11 @@
-export default function Button() {
+export default function Button({color}) {
     return (
-        <button>Valider</button>
+        <button style={{
+            backgroundColor: color ? color : "black",
+            color: "whitesmoke",
+            padding: "0.7em",
+            border: "none",
+            borderRadius: "5px"
+        }}>Valider</button>
     )
 }
