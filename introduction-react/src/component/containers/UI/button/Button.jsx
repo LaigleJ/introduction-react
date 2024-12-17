@@ -1,11 +1,16 @@
-export default function Button({color}) {
+import PropTypes from "prop-types";
+
+export default function Button({color, children}) {
     return (
-        <button style={{
-            backgroundColor: color ? color : "black",
-            color: "whitesmoke",
-            padding: "0.7em",
-            border: "none",
-            borderRadius: "5px"
-        }}>Valider</button>
+        <button 
+        className="text-neutral-200 p-2 rounded"
+        style={{
+            backgroundColor: color ? color : "black"
+        }}>{children}</button>
     )
+}
+
+Button.propTypes = {
+    color: PropTypes.string,
+    children: PropTypes.node
 }

@@ -4,7 +4,9 @@ export function Footer() {
     return (
         <footer>
             <p>Copyright 2024</p>
-            <Button color="red" />
+            <Button color="red">
+                <p>Salut</p>
+            </Button>
         </footer>
     )
 }
