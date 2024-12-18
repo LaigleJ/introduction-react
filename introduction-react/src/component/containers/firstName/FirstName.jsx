@@ -1,7 +1,13 @@
-export function FirstName() {
+import PropTypes from "prop-types"
+
+export function FirstName({children}) {
     return (
         <>
-        <p>Laigle</p>
+        <p>{children}</p>
         </>
     )
+}
+
+FirstName.propTypes = {
+    children: PropTypes.node.isRequired
 }
