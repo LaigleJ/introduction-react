@@ -5,6 +5,7 @@ import { User } from "./component/containers/users/user";
 import { Routine } from "./component/containers/routine/Routine";
 import Compteur from "./component/containers/compteur/compteur";
 import { Menu } from "./component/containers/menu/Menu";
+import { ContactForm } from "./component/containers/contact/Contact";
 
 function App() {
   const user = {
@@ -27,6 +28,7 @@ function App() {
         <Menu>
           <Compteur />
         </Menu>
+        <ContactForm />
         <User utilisateur={user} />
         <Routine />
         <Footer />

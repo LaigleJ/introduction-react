@@ -14,5 +14,5 @@ export default function Button({color, children, gereclique}) {
 Button.propTypes = {
     color: PropTypes.string,
     children: PropTypes.node.isRequired,
-    gereclique: PropTypes.func.isRequired
+    gereclique: PropTypes.func
 }
