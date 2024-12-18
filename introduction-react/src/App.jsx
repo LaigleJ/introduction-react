@@ -20,10 +20,12 @@ function App() {
   }*/
   return (
     <>
-    <Header />
+   <div className='flex flex-col items-center justify-center gap-4 p-11'>
+   <Header />
     <User utilisateur={user} />
     <Routine />
     <Footer />
+   </div>
     </>
   )
 }
