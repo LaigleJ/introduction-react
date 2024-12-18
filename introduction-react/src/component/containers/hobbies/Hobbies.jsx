@@ -1,4 +1,6 @@
-export function Hobbies() {
+import PropTypes from "prop-types"
+
+export function Hobbies({pations}) {
     const hobbiesDb = [
         {
             id: 0,
@@ -30,7 +32,7 @@ export function Hobbies() {
                         border: "1px solid white",
                         margin: "0.5em"
                 }}>
-                    {hobby.name}
+                    {pations.includes(hobby.name) ? <strong>{hobby.name}</strong> : hobby.name}
                 </li>
             )
            })}
@@ -38,4 +40,8 @@ export function Hobbies() {
         </>
     )
       
+}
+
+Hobbies.propTypes = {
+    pations: PropTypes.array
 }
