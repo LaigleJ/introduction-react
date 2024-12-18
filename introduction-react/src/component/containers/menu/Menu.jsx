@@ -1,7 +1,8 @@
 import Button from "../UI/button/Button";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-export function Menu() {
+export function Menu({children}) {
   const [isVisible, setIsVisible] = useState(false);
 
   function toggleMenu() {
@@ -11,16 +12,27 @@ export function Menu() {
     <>
       <Button gereclique={toggleMenu}>{isVisible ? "hide" : "show"}</Button>
 
-      <section className={`${
-            isVisible ? "hidden" : "block"
-          } transition-all duration-300 ease-in-out mt-6 bg-gray-500 shadow-xl rounded-lg p-6 w-64`}  >
-      <h3 className="text-xl text-center">Menu Secret</h3>
-      <ol className="list-decimal gap-1">
-        <li>Nourir le chien</li>
-        <li>Faire mes devoirs</li>
-        <li>Essayer des trucs en React</li>
-      </ol>
-      </section>
+      {isVisible && (
+        <section>
+            {children}
+        </section>
+      )}
+      
     </>
   );
 }
+
+Menu.propTypes = {
+  children: PropTypes.node,
+};
+
+/* <section className={`${
+    isVisible ? "hidden" : "block"
+  } transition-all duration-300 ease-in-out mt-6 bg-gray-500 shadow-xl rounded-lg p-6 w-64`}  >
+<h3 className="text-xl text-center">Menu Secret</h3>
+<ol className="list-decimal gap-1">
+<li>Nourir le chien</li>
+<li>Faire mes devoirs</li>
+<li>Essayer des trucs en React</li>
+</ol>
+</section> */
