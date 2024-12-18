@@ -9,6 +9,14 @@ function App() {
     lastName: "Jérémy",
     hobbies: ["HTML", "CSS", "React", "Javascript"]
   }
+// déclarer la function des bouton là ou on utilise le bouton sunon il faut en créer un component
+  function ajoute() {
+    alert("Ajoute")
+  }
+
+  function supprime() {
+    alert("Supprime")
+  }
   return (
     <>
     <Header />

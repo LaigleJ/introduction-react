@@ -1,6 +1,11 @@
 import Button from "../UI/button/Button";
 
 export function Header() {
+
+  function supprime() {
+    alert("Supprime");
+  }
+
   return (
     <header className="container">
       <h1 className="title">Bienvenue</h1>
@@ -10,8 +15,8 @@ export function Header() {
         voluptatem sapiente incidunt excepturi sunt ab nihil asperiores. Cumque,
         praesentium officia.
       </p>
-      <Button>
-        <p>Tchoutchou</p>
+      <Button gereclique={supprime}>
+        <p>Supprimer</p>
       </Button>
     </header>
   );

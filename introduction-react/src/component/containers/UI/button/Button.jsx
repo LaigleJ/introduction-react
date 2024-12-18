@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 
-export default function Button({color, children}) {
+export default function Button({color, children, gereclique}) {
     return (
         <button 
+        onClick={gereclique}
         className="text-neutral-200 p-2 rounded-full hover:shadow-white w-24 b-none "
         style={{
             backgroundColor: color ? color : "black"
@@ -12,5 +13,6 @@ export default function Button({color, children}) {
 
 Button.propTypes = {
     color: PropTypes.string,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    gereclique: PropTypes.func.isRequired
 }
