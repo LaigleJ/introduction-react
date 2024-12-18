@@ -4,6 +4,7 @@ import { Footer } from "./component/containers/footer/Footer";
 import { User } from "./component/containers/users/user";
 import { Routine } from "./component/containers/routine/Routine";
 import Compteur from "./component/containers/compteur/compteur";
+import { Menu } from "./component/containers/menu/Menu";
 
 function App() {
   const user = {
@@ -23,6 +24,7 @@ function App() {
     <>
       <div className="flex flex-col items-center justify-center gap-4 p-11">
         <Header />
+        <Menu />
         <Compteur />
         <User utilisateur={user} />
         <Routine />
