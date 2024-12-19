@@ -30,6 +30,7 @@ export default function Got() {
   return (
     <div className="flex flex-col items-center justify-center space-y-4 p-6 bg-pink-900 rounded-lg shadow-lg w-full max-w-md mx-auto">
       <h2 className="text-2xl font-bold text-gray-100 mb-4">Game of Thrones</h2>
+      <div className="grid grid-cols-2 gap-4">
       {persos.map((personnage) => (
         <div key={personnage.id} className="flex items-center space-x-2">
           <img
@@ -43,6 +44,7 @@ export default function Got() {
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 }
