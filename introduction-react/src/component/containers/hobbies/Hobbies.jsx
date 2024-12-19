@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useState } from "react";
 
 export function Hobbies() {
@@ -21,16 +20,14 @@ export function Hobbies() {
     },
   ];
 
-  // Définir l'état local pour gérer les hobbies ajoutés
   const [pations, setPations] = useState([]); 
-  const [newHobby, setNewHobby] = useState(""); // L'état pour le nouvel hobby à ajouter
-  const [error, setError] = useState(""); // Pour gérer les erreurs
-  const [nextId, setNextId] = useState(4); // ID commence à 4 pour les nouveaux hobbies
+  const [newHobby, setNewHobby] = useState("");
+  const [error, setError] = useState("");
+  const [nextId, setNextId] = useState(4); 
 
   const handleInputChange = (event) => {
     setNewHobby(event.target.value);
 
-    // Si l'utilisateur commence à taper un hobby valide, on supprime l'erreur
     if (event.target.value.trim() !== "") {
       setError("");
     }
@@ -38,29 +35,24 @@ export function Hobbies() {
 
   const handleAddHobby = () => {
     if (newHobby.trim() === "") {
-      setError("Le champ ne peut pas être vide."); // Afficher une erreur si le champ est vide
+      setError("Le champ ne peut pas être vide."); 
       return;
     }
 
-    // Vérifie si le hobby existe déjà dans pations
     if (pations.some((hobby) => hobby.name === newHobby)) {
       setError("Ce hobby existe déjà.");
       return;
     }
 
-    // Créer un nouvel hobby avec un ID unique
     const newHobbyObject = {
-      id: nextId, // Attribuer un ID unique
+      id: nextId, 
       name: newHobby,
     };
 
-    // Ajouter le hobby à la liste de pations
     setPations([...pations, newHobbyObject]);
 
-    // Mettre à jour l'ID pour le prochain hobby
     setNextId(nextId + 1);
 
-    // Réinitialiser l'input et l'erreur
     setNewHobby("");
     setError("");
   };
@@ -70,7 +62,6 @@ export function Hobbies() {
       <h2 className="title">Hobbies</h2>
 
       <ul>
-        {/* Boucle uniquement sur pations, qui contient les hobbies ajoutés */}
         {pations.map((hobby) => (
           <li
             key={hobby.id}
@@ -85,7 +76,6 @@ export function Hobbies() {
         ))}
       </ul>
 
-      {/* Formulaire pour ajouter un hobby */}
       <div>
         <input
           type="text"
@@ -118,7 +108,3 @@ export function Hobbies() {
     </>
   );
 }
-
-Hobbies.propTypes = {
-  // Il n'est plus nécessaire de spécifier pations et setPations en tant que props ici
-};
