@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UtilisateurContext } from "../../../App";
 
 export function Hobbies() {
+  // Récupération des données utilisateur via useContext
+  const user = useContext(UtilisateurContext);
+
   const hobbiesDb = [
     {
       id: 0,
@@ -59,6 +63,13 @@ export function Hobbies() {
 
   return (
     <>
+      {/* Message de bienvenue basé sur le contexte utilisateur */}
+      {user && (
+        <p>
+          Bienvenue, <strong>{user.name}</strong> ! Voici vos hobbies :
+        </p>
+      )}
+
       <h2 className="title">Hobbies</h2>
 
       <ul>

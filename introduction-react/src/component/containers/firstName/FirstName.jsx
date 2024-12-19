@@ -1,13 +1,12 @@
-import PropTypes from "prop-types"
+import { UtilisateurContext } from "../../../App"
+import  { useContext } from "react"
 
-export function FirstName({prenom}) {
+export function FirstName() {
+    const user = useContext(UtilisateurContext);
     return (
         <>
-        <p>{prenom}</p>
+        <p>{user.firstname}</p>
         </>
     )
 }
 
-FirstName.propTypes = {
-    prenom: PropTypes.string.isRequired
-}

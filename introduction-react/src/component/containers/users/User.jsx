@@ -3,11 +3,11 @@ import { Hobbies } from "../hobbies/Hobbies";
 import { Player } from "../player/Player";
 import PropTypes from "prop-types"
 
-export function User({utilisateur}) {
+export function User() {
     return (
             <>
-            <FullName prenom={utilisateur.firstName} nom={utilisateur.lastName}/>
-            <Hobbies pations={utilisateur.hobbies}/>
+            <FullName />
+            <Hobbies />
             <Player />
             </>
     )
