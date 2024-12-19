@@ -1,11 +1,11 @@
 import "./index.css";
 import { Header } from "./component/containers/header/Header";
 import { Footer } from "./component/containers/footer/Footer";
-import { User } from "./component/containers/users/user";
 import { Routine } from "./component/containers/routine/Routine";
 import Compteur from "./component/containers/compteur/compteur";
 import { Menu } from "./component/containers/menu/Menu";
 import { ContactForm } from "./component/containers/contact/Contact";
+import { User } from "./component/containers/user/User";
 
 function App() {
   const user = {
